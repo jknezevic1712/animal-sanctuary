@@ -1,0 +1,29 @@
+.homepage-container {
+  min-height: 800px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h3 {
+    margin-top: 2.5em;
+    font-size: 1.5em;
+  }
+
+  .homepage-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+
+    button {
+      display: flex;
+      align-items: center;
+      margin-top: 2.5em;
+      width: 30%;
+      height: 4em;
+    }
+  }
+}

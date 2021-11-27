@@ -1,0 +1,22 @@
+body {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  font-family: "Estonia", cursive;
+  font-size: 2.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: white;
+
+  button {
+    border: none;
+    font-family: Verdana, sans-serif;
+    cursor: pointer;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

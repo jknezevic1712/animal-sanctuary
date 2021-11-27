@@ -1,0 +1,40 @@
+.header-container {
+  font-weight: bold;
+  font-size: 1.5em;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+
+  @media screen and (max-width: 800px) {
+    height: 60px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
+  }
+
+  .header-logo {
+    padding: 10px;
+    width: fit-content;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 10px;
+  }
+
+  .header-title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 3em;
+  }
+
+  &:hover {
+    transition: 500ms ease all;
+    background: #5f9bfc;
+  }
+}
