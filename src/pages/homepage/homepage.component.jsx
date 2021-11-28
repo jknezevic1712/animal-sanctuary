@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 import "./homepage.styles.scss";
 
@@ -19,6 +20,8 @@ const tileText4 =
   "“A kitten is the delight of a household. All day long a comedy is played out by an incomparable actor.” – Champfleury";
 
 const Homepage = () => {
+  const history = useHistory();
+
   return (
     <div className="homepage-container">
       <div className="homepage-text">
@@ -26,7 +29,22 @@ const Homepage = () => {
           Designed with purpose of helping out our good and loyal friends find
           their home!
         </h3>
-        <CustomButton>Find your new friend</CustomButton>
+        <div className="homepage-buttons">
+          <CustomButton
+            onClick={() => {
+              history.push("/register-new");
+            }}
+          >
+            Take care of your friend
+          </CustomButton>
+          <CustomButton
+            onClick={() => {
+              history.push("/");
+            }}
+          >
+            Find your new friend
+          </CustomButton>
+        </div>
       </div>
       <HomepageTile
         url={homepage_1}

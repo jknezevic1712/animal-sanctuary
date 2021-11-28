@@ -1,0 +1,14 @@
+.registerNew-picture {
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 500px;
+    height: 450px;
+    border: 5px solid #5f9bfc;
+    border-top-left-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border-top-right-radius: 2%;
+    border-bottom-left-radius: 2%;
+  }
+}

@@ -1,0 +1,114 @@
+$sub-color: grey;
+$main-color: black;
+$groups: 7;
+
+@mixin shrinkLabel {
+  top: -20px;
+  font-size: 20px;
+  color: $main-color;
+}
+
+.registerNew-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  line-height: 2.5;
+
+  hr {
+    width: 100%;
+  }
+
+  button {
+    width: 50%;
+    margin-top: 15%;
+    margin-left: 25%;
+  }
+
+  .group {
+    position: relative;
+
+    @for $i from 0 to $groups {
+      &:nth-child(#{$i + 1}) {
+        .form-input:focus ~ .form-input-label {
+          @include shrinkLabel();
+        }
+      }
+    }
+
+    .form-input {
+      background: none;
+      background-color: white;
+      color: $sub-color;
+      font-size: 18px;
+      padding: 10px 10px 10px 5px;
+      display: block;
+      width: 100%;
+      border: none;
+      border-radius: 0;
+      border-bottom: 1px solid $sub-color;
+      margin: 25px 0;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input[type="password"] {
+      letter-spacing: 0.3em;
+    }
+
+    input[type="checkbox"] {
+      align-items: center;
+    }
+
+    @for $i from 0 to $groups {
+      &:nth-child(#{$i + 1}) {
+        .form-input-label {
+          color: $sub-color;
+          font-size: 30px;
+          font-weight: normal;
+          position: absolute;
+          pointer-events: none;
+          left: 5px;
+          top: 10px;
+          transition: 300ms ease all;
+
+          &.shrink {
+            @include shrinkLabel();
+          }
+        }
+      }
+    }
+  }
+
+  .group:nth-child(8) {
+    display: flex;
+    align-items: center;
+
+    .form-input-label {
+      color: $sub-color;
+      font-size: 30px;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+    }
+
+    .form-input {
+      margin-left: 40%;
+    }
+  }
+
+  @media only screen and (min-width: 2560px) {
+    .group {
+      .form-input {
+        font-size: 1.2em;
+      }
+
+      .form-input-label {
+        font-size: 0.85em;
+      }
+    }
+  }
+}
