@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import { useHistory } from "react-router-dom";
 
 import "./register-new.styles.scss";
 
 import CustomButton from "../../components/custom-button/custom-button.component";
 import FormInput from "../../components/form-input/form-input.component";
+import FormInputDate from "../../components/form-input/form-input-date.component";
 import RegisterNewPicture from "../../components/register-new-picture/register-new-picture.component";
 
 const RegisterNew = () => {
@@ -95,8 +96,7 @@ const RegisterNew = () => {
             label="Breed"
             required
           />
-          <FormInput
-            type="date"
+          <FormInputDate
             name="dateOfBirth"
             value={dateOfBirth}
             onChange={handleChange}
