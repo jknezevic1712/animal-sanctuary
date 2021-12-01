@@ -1,4 +1,4 @@
-.homepage-container {
+.pet-collection-container {
   min-height: 800px;
   height: 100%;
   width: 100%;
@@ -11,14 +11,14 @@
     font-size: 1.5em;
   }
 
-  .homepage-text {
+  .pet-collection-text {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 2em;
 
-    .homepage-buttons {
+    .pet-collection-buttons {
       display: flex;
       flex-direction: row;
       justify-content: space-between;

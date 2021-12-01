@@ -6,8 +6,6 @@
   line-height: 50px;
   padding: 0 35px 0 35px;
   font-size: 15px;
-  // background-color: white;
-  // color: black;
   background: #5f9bfc;
   color: white;
   text-transform: uppercase;
@@ -21,6 +19,19 @@
   &:hover {
     background: white;
     color: black;
+  }
+
+  &.google-sign-in {
+    width: 100%;
+    background: white;
+    color: black;
+    margin-left: 5%;
+
+    &:hover {
+      background: #5f9bfc;
+      color: white;
+      border: none;
+    }
   }
 
   &.inverted {

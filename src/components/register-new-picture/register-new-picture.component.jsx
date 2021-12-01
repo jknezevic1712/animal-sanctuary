@@ -5,7 +5,7 @@ import "./register-new-picture.styles.scss";
 const RegisterNewPicture = ({ url }) => {
   return (
     <div className="registerNew-picture">
-      <img alt="PET PICTURE" src={`${url}`} />
+      <img alt="Your pet" src={`${url}`} />
     </div>
   );
 };

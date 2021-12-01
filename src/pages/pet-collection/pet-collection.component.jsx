@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-import "./homepage.styles.scss";
+import "./pet-collection.styles.scss";
 
 import CustomButton from "../../components/custom-button/custom-button.component";
 import HomepageTile from "../../components/homepage-tile/homepage-tile.component";

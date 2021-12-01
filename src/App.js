@@ -1,7 +1,11 @@
-import React, { lazy, Suspense } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./App.scss";
+
+import { selectCurrentUser } from "./redux/user/user.selectors";
+import { checkUserSession } from "./redux/user/user.actions";
 
 // * Components
 import Spinner from "./components/spinner/spinner.component";
@@ -12,9 +16,19 @@ const Homepage = lazy(() => import("./pages/homepage/homepage.component"));
 const RegisterNew = lazy(() =>
   import("./pages/register-new/register-new.component")
 );
+const AuthenticationPage = lazy(() =>
+  import("./pages/authentication/authentication.component")
+);
 
 // * App component
 const App = () => {
+  const currentUser = useSelector(selectCurrentUser);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkUserSession());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <Header />
@@ -22,6 +36,13 @@ const App = () => {
         <Suspense fallback={<Spinner />}>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/register-new" component={RegisterNew} />
+          <Route
+            exact
+            path="/authentication"
+            render={() =>
+              currentUser ? <Redirect to="/" /> : <AuthenticationPage />
+            }
+          />
         </Suspense>
       </Switch>
     </div>

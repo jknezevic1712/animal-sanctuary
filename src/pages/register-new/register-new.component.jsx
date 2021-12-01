@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
 
 import "./register-new.styles.scss";
 
@@ -41,6 +40,7 @@ const RegisterNew = () => {
     }
 
     alert("Your friend's information has been received!");
+    console.log(petInformation);
     // signUpStart({ displayName, email, password });
   };
 
@@ -57,7 +57,7 @@ const RegisterNew = () => {
       <h3>Let us keep your friend safe and happy!</h3>
       <div className="registerNew-container">
         <RegisterNewPicture url={url ? url : emptyUrl} />
-        <form className="registerNew-form" onSubmit={handleSubmit}>
+        <form className="form-input-container" onSubmit={handleSubmit}>
           <FormInput
             type="text"
             name="ownerName"
@@ -75,13 +75,6 @@ const RegisterNew = () => {
           <hr />
           <FormInput
             type="text"
-            name="url"
-            value={url}
-            onChange={handleChange}
-            label="Pet's photo url"
-          />
-          <FormInput
-            type="text"
             name="petName"
             value={petName}
             onChange={handleChange}
@@ -95,6 +88,13 @@ const RegisterNew = () => {
             onChange={handleChange}
             label="Breed"
             required
+          />
+          <FormInput
+            type="text"
+            name="url"
+            value={url}
+            onChange={handleChange}
+            label="Pet's photo url"
           />
           <FormInputDate
             name="dateOfBirth"
