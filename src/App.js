@@ -19,6 +19,9 @@ const RegisterNew = lazy(() =>
 const AuthenticationPage = lazy(() =>
   import("./pages/authentication/authentication.component")
 );
+const PetCollectionPage = lazy(() =>
+  import("./pages/pet-collection/pet-collection.component")
+);
 
 // * App component
 const App = () => {
@@ -43,6 +46,7 @@ const App = () => {
               currentUser ? <Redirect to="/" /> : <AuthenticationPage />
             }
           />
+          <Route exact path="/pet-collection" component={PetCollectionPage} />
         </Suspense>
       </Switch>
     </div>

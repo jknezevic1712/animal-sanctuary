@@ -40,6 +40,59 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const addCollectionAndDocuments = async (
+  collectionKey,
+  objectsToAdd
+) => {
+  const collectionRef = firestore.collection(collectionKey);
+
+  const batch = firestore.batch();
+  objectsToAdd.forEach((obj) => {
+    const newDocRef = collectionRef.doc();
+    batch.set(newDocRef, obj);
+  });
+
+  return await batch.commit();
+};
+
+export const convertCollectionsSnapshotToMap = (collections) => {
+  const transformedCollection = collections.docs.map((doc) => {
+    const {
+      ownerName,
+      ownerAddress,
+      petName,
+      breed,
+      dateOfBirth,
+      url,
+      vaccinated,
+      createdAt,
+    } = doc.data();
+
+    return {
+      id: doc.id,
+      ownerName,
+      ownerAddress,
+      petName,
+      breed,
+      dateOfBirth,
+      url,
+      vaccinated,
+      createdAt,
+    };
+  });
+
+  // * Code below transforms your mapped collections title to your desired title, e.g.,
+  // * you have 0: {title: Hats, items: Array(6)}, etc.
+  // * and with code below you can set it to for example,
+  // * hats: {title: Hats, items: Array(6)}
+  // ! Here I used document id as each collection's title because it's unique
+
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.id] = collection;
+    return accumulator;
+  }, {});
+};
+
 export const getCurrentUser = () => {
   return new Promise((resolve, reject) => {
     const unsubscribe = auth.onAuthStateChanged((userAuth) => {

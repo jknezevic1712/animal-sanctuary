@@ -19,7 +19,7 @@ const Header = ({ currentUser, signOutStart }) => (
         <img src={Logo} alt="Animal Sanctuary Logo" className="header-logo" />
       </Link>
     </div>
-    <div className="header-title">
+    <div className={`header-title ${currentUser ? "header-title-margin" : ""}`}>
       <span>Animal Sanctuary</span>
     </div>
     <div className="header-options">

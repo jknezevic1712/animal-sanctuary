@@ -1,0 +1,7 @@
+const RegisterNewActionTypes = {
+  REGISTER_NEW_START: "REGISTER_NEW_START",
+  REGISTER_NEW_SUCCESS: "REGISTER_NEW_SUCCESS",
+  REGISTER_NEW_FAILURE: "REGISTER_NEW_FAILURE",
+};
+
+export default RegisterNewActionTypes;

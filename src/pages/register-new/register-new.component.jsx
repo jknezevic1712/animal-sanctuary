@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 
 import "./register-new.styles.scss";
 
@@ -7,7 +8,9 @@ import FormInput from "../../components/form-input/form-input.component";
 import FormInputDate from "../../components/form-input/form-input-date.component";
 import RegisterNewPicture from "../../components/register-new-picture/register-new-picture.component";
 
-const RegisterNew = () => {
+import { registerNewStart } from "../../redux/register-new/register-new.actions";
+
+const RegisterNew = ({ registerNewStart }) => {
   const [petInformation, setPetInformation] = useState({
     ownerName: "",
     ownerAddress: "",
@@ -33,15 +36,25 @@ const RegisterNew = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const createdAt = new Date();
 
     if (petName === "" && breed === "") {
       alert("Please enter required information!");
       return;
     }
 
-    alert("Your friend's information has been received!");
-    console.log(petInformation);
-    // signUpStart({ displayName, email, password });
+    // alert("Your friend's information has been received!");
+    // console.log(petInformation);
+    registerNewStart({
+      url,
+      petName,
+      breed,
+      dateOfBirth,
+      vaccinated,
+      ownerName,
+      ownerAddress,
+      createdAt,
+    });
   };
 
   const handleChange = (e) => {
@@ -116,4 +129,9 @@ const RegisterNew = () => {
   );
 };
 
-export default RegisterNew;
+const mapDispatchToProps = (dispatch) => ({
+  registerNewStart: (registerNewData) =>
+    dispatch(registerNewStart(registerNewData)),
+});
+
+export default connect(null, mapDispatchToProps)(RegisterNew);
