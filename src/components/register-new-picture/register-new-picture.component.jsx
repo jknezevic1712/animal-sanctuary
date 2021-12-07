@@ -2,10 +2,12 @@ import React from "react";
 
 import "./register-new-picture.styles.scss";
 
+import Spinner from "../spinner/spinner.component";
+
 const RegisterNewPicture = ({ url }) => {
   return (
     <div className="registerNew-picture">
-      <img alt="Your pet" src={`${url}`} />
+      {url ? <img alt="Your pet" src={`${url}`} /> : <Spinner />}
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { createStructuredSelector } from "reselect";
 
 import "./register-new.styles.scss";
 
@@ -8,14 +9,29 @@ import FormInput from "../../components/form-input/form-input.component";
 import FormInputDate from "../../components/form-input/form-input-date.component";
 import RegisterNewPicture from "../../components/register-new-picture/register-new-picture.component";
 
-import { registerNewStart } from "../../redux/register-new/register-new.actions";
+import { registerNewStartAsync } from "../../redux/register-new/register-new.actions";
+import { selectIsUploadingData } from "../../redux/register-new/register-new.selectors";
 
-const RegisterNew = ({ registerNewStart }) => {
+// import { addCollectionAndDocuments } from "../../firebase/firebase.utils";
+
+// const test = (obj) => {
+// const obj = {
+//   test: {
+//     name: "lalala",
+//     age: 123,
+//   },
+//   test12: {
+//     name: "asasaas",
+//     age: 55,
+//   },
+// };
+//   return addCollectionAndDocuments("pets-collection", obj);
+// };
+
+const RegisterNew = ({ registerNewStartAsync }) => {
   const [petInformation, setPetInformation] = useState({
     ownerName: "",
     ownerAddress: "",
-    emptyUrl:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/330px-No-Image-Placeholder.svg.png",
     url: "",
     petName: "",
     breed: "",
@@ -23,8 +39,9 @@ const RegisterNew = ({ registerNewStart }) => {
     vaccinated: false,
   });
 
+  // Eli, Nala, Simba, Max, Lu
+
   const {
-    emptyUrl,
     url,
     petName,
     breed,
@@ -34,27 +51,29 @@ const RegisterNew = ({ registerNewStart }) => {
     ownerAddress,
   } = petInformation;
 
+  const initialState = {
+    ownerName: "",
+    ownerAddress: "",
+    url: "",
+    petName: "",
+    breed: "",
+    dateOfBirth: "",
+    vaccinated: false,
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const createdAt = new Date();
+    const registerNewPetData = { createdAt, ...petInformation };
 
     if (petName === "" && breed === "") {
       alert("Please enter required information!");
       return;
     }
+    console.log("PET: ", registerNewPetData);
 
-    // alert("Your friend's information has been received!");
-    // console.log(petInformation);
-    registerNewStart({
-      url,
-      petName,
-      breed,
-      dateOfBirth,
-      vaccinated,
-      ownerName,
-      ownerAddress,
-      createdAt,
-    });
+    registerNewStartAsync("pets-collection", registerNewPetData);
+    setPetInformation(initialState);
   };
 
   const handleChange = (e) => {
@@ -69,7 +88,7 @@ const RegisterNew = ({ registerNewStart }) => {
     <div className="registerNew">
       <h3>Let us keep your friend safe and happy!</h3>
       <div className="registerNew-container">
-        <RegisterNewPicture url={url ? url : emptyUrl} />
+        <RegisterNewPicture url={url} />
         <form className="form-input-container" onSubmit={handleSubmit}>
           <FormInput
             type="text"
@@ -129,9 +148,13 @@ const RegisterNew = ({ registerNewStart }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  registerNewStart: (registerNewData) =>
-    dispatch(registerNewStart(registerNewData)),
+const mapStateToProps = createStructuredSelector({
+  isUploadingData: selectIsUploadingData,
 });
 
-export default connect(null, mapDispatchToProps)(RegisterNew);
+const mapDispatchToProps = (dispatch) => ({
+  registerNewStartAsync: (collectionKey, registerNewData) =>
+    dispatch(registerNewStartAsync(collectionKey, registerNewData)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterNew);

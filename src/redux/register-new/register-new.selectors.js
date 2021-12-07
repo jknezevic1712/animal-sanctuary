@@ -6,3 +6,8 @@ export const selectCurrentRegisterData = createSelector(
   [selectRegisterNewData],
   (registerNew) => registerNew.registerData
 );
+
+export const selectIsUploadingData = createSelector(
+  [selectRegisterNewData],
+  (registerNew) => registerNew.isUploadingData
+);

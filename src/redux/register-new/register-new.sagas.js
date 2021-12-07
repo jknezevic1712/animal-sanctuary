@@ -6,7 +6,7 @@ import { registerNewSuccess, registerNewFailure } from "./register-new.actions";
 
 import { addCollectionAndDocuments } from "../../firebase/firebase.utils";
 
-export function* RegisterNew({ registerNewData }) {
+export function* RegisterNew({ payload: { registerNewData } }) {
   try {
     yield put(addCollectionAndDocuments("pets-collection", registerNewData));
     yield put(registerNewSuccess(registerNewData));

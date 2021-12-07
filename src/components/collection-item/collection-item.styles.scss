@@ -5,9 +5,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  border: 1px solid black;
   margin: 0 7.5px 15px;
   overflow: hidden;
+  border: 1px solid black;
+  border-top-left-radius: 5%;
+  border-bottom-right-radius: 5%;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
 
   &:hover {
     cursor: pointer;
@@ -63,6 +67,7 @@
     }
 
     .collection-item-subtitle {
+      max-width: 250px;
       color: #4a4a4a;
       font-size: 0.4em;
     }

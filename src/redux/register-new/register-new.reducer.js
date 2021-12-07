@@ -1,15 +1,23 @@
 import RegisterNewActionTypes from "./register-new.types";
 
 const INITIAL_STATE = {
-  errorMessage: undefined,
   registerData: null,
+  errorMessage: undefined,
+  isUploadingData: false,
 };
 
 const registerNewReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case RegisterNewActionTypes.REGISTER_NEW_START:
+      return {
+        ...state,
+        isUploadingData: true,
+      };
+
     case RegisterNewActionTypes.REGISTER_NEW_SUCCESS:
       return {
         ...state,
+        isUploadingData: false,
         registerData: action.payload,
         errorMessage: undefined,
       };
@@ -17,7 +25,8 @@ const registerNewReducer = (state = INITIAL_STATE, action) => {
     case RegisterNewActionTypes.REGISTER_NEW_FAILURE:
       return {
         ...state,
-        registerData: null,
+        isUploadingData: false,
+        // registerData: null,
         errorMessage: action.payload,
       };
 
