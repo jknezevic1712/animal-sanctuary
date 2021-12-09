@@ -26,7 +26,6 @@ const registerNewReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isUploadingData: false,
-        // registerData: null,
         errorMessage: action.payload,
       };
 

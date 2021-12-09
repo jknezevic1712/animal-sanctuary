@@ -8,6 +8,12 @@ $groups: 7;
   color: $main-color;
 }
 
+@mixin removeShrinkLabel {
+  top: -5px;
+  font-size: 30px;
+  color: $main-color;
+}
+
 .form-input-container {
   display: flex;
   justify-content: center;
@@ -28,12 +34,8 @@ $groups: 7;
   .group {
     position: relative;
 
-    @for $i from 0 to $groups {
-      &:nth-child(#{$i + 1}) {
-        .form-input:focus ~ .form-input-label {
-          @include shrinkLabel();
-        }
-      }
+    .form-input:focus ~ .form-input-label {
+      @include shrinkLabel();
     }
 
     .form-input {
@@ -72,27 +74,23 @@ $groups: 7;
       height: 15px;
     }
 
-    @for $i from 0 to $groups {
-      &:nth-child(#{$i + 1}) {
-        .form-input-label {
-          color: $main-color;
-          font-size: 30px;
-          font-weight: bold;
-          position: absolute;
-          pointer-events: none;
-          left: 5px;
-          top: 10px;
-          transition: 300ms ease all;
+    .form-input-label {
+      color: $main-color;
+      font-size: 30px;
+      font-weight: bold;
+      position: absolute;
+      pointer-events: none;
+      left: 5px;
+      top: 10px;
+      transition: 300ms ease all;
 
-          &.shrink {
-            @include shrinkLabel();
-          }
-        }
+      &.shrink {
+        @include shrinkLabel();
       }
     }
   }
 
-  .group:nth-child(8) {
+  .checkboxstyle {
     display: flex;
     align-items: center;
 
@@ -103,10 +101,15 @@ $groups: 7;
       position: absolute;
       pointer-events: none;
       left: 5px;
+      top: -5px;
     }
 
     .form-input {
       margin-left: 40%;
+    }
+
+    .form-input:focus ~ .form-input-label {
+      @include removeShrinkLabel();
     }
   }
 

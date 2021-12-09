@@ -12,22 +12,6 @@ import RegisterNewPicture from "../../components/register-new-picture/register-n
 import { registerNewStartAsync } from "../../redux/register-new/register-new.actions";
 import { selectIsUploadingData } from "../../redux/register-new/register-new.selectors";
 
-// import { addCollectionAndDocuments } from "../../firebase/firebase.utils";
-
-// const test = (obj) => {
-// const obj = {
-//   test: {
-//     name: "lalala",
-//     age: 123,
-//   },
-//   test12: {
-//     name: "asasaas",
-//     age: 55,
-//   },
-// };
-//   return addCollectionAndDocuments("pets-collection", obj);
-// };
-
 const RegisterNew = ({ registerNewStartAsync }) => {
   const [petInformation, setPetInformation] = useState({
     ownerName: "",
@@ -38,8 +22,6 @@ const RegisterNew = ({ registerNewStartAsync }) => {
     dateOfBirth: "",
     vaccinated: false,
   });
-
-  // Eli, Nala, Simba, Max, Lu
 
   const {
     url,
@@ -72,7 +54,7 @@ const RegisterNew = ({ registerNewStartAsync }) => {
     }
     console.log("PET: ", registerNewPetData);
 
-    registerNewStartAsync("pets-collection", registerNewPetData);
+    registerNewStartAsync(registerNewPetData);
     setPetInformation(initialState);
   };
 
@@ -140,6 +122,7 @@ const RegisterNew = ({ registerNewStartAsync }) => {
             value={vaccinated}
             onChange={handleChange}
             label="Pet vaccinated?"
+            ischeckboxfield="true"
           />
           <CustomButton type="submit">SUBMIT</CustomButton>
         </form>
@@ -153,8 +136,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  registerNewStartAsync: (collectionKey, registerNewData) =>
-    dispatch(registerNewStartAsync(collectionKey, registerNewData)),
+  registerNewStartAsync: (registerNewData) =>
+    dispatch(registerNewStartAsync(registerNewData)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RegisterNew);

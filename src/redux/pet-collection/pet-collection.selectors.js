@@ -13,3 +13,9 @@ export const selectCollectionsForView = memoize(
     collections ? Object.keys(collections).map((key) => collections[key]) : []
   )
 );
+
+export const selectCollectionDetails = memoize((urlID) =>
+  createSelector([selectCollection], (collection) =>
+    collection ? collection[urlID] : null
+  )
+);

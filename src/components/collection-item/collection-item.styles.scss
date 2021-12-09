@@ -1,11 +1,13 @@
 .collection-item-container {
-  min-width: 85%;
+  min-width: 20%;
+  max-width: 20%;
   height: 450px;
   flex: 1 1 auto;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   margin: 0 7.5px 15px;
+  margin-bottom: 2em;
   overflow: hidden;
   border: 1px solid black;
   border-top-left-radius: 5%;

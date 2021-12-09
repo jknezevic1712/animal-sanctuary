@@ -9,6 +9,7 @@ import { checkUserSession } from "./redux/user/user.actions";
 
 // * Components
 import Spinner from "./components/spinner/spinner.component";
+import PetInformationPage from "./components/pet-information-page/pet-information-page.component";
 
 // * Page Components
 import Header from "./components/header/header.component";
@@ -19,8 +20,8 @@ const RegisterNew = lazy(() =>
 const AuthenticationPage = lazy(() =>
   import("./pages/authentication/authentication.component")
 );
-const PetCollectionPage = lazy(() =>
-  import("./pages/pet-collection/pet-collection.component")
+const PetCollectionContainer = lazy(() =>
+  import("./pages/pet-collection/pet-collection.container")
 );
 
 // * App component
@@ -46,7 +47,15 @@ const App = () => {
               currentUser ? <Redirect to="/" /> : <AuthenticationPage />
             }
           />
-          <Route exact path="/pet-collection" component={PetCollectionPage} />
+          <Route
+            exact
+            path="/pet-collection"
+            component={PetCollectionContainer}
+          />
+          <Route
+            path={`/pet-collection/:urlID`}
+            component={PetInformationPage}
+          />
         </Suspense>
       </Switch>
     </div>

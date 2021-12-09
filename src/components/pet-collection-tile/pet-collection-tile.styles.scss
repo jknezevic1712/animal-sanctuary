@@ -1,18 +1,8 @@
 .collection-container {
   width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-items: center;
-  align-items: center;
   padding: 2em;
-  grid-row-gap: 2em;
-
-  .collection-tile {
-    border: 2px solid red;
-    padding: 1.5em;
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    align-items: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
 }
