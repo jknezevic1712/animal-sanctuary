@@ -7,10 +7,6 @@ import MyProfilePage from "./my-profile.component";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
 const MyProfileContainer = ({ currentUser }) => {
-  // return currentUser.map((data) => (
-  //   <FormInput key={id} {...otherPetsData} urlID={id} />
-  // ));
-
   return <MyProfilePage currentUser={currentUser} />;
 };
 

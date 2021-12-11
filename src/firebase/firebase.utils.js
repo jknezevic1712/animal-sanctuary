@@ -51,6 +51,16 @@ export const registerNewPet = async (registerNewData) => {
   return await batch.commit();
 };
 
+export const updateProfileData = async (userId, profileData) => {
+  const collectionRef = firestore.collection("users");
+  const docRef = collectionRef.doc(userId);
+  const batch = firestore.batch();
+
+  batch.set(docRef, profileData);
+
+  return await batch.commit();
+};
+
 export const convertCollectionsSnapshotToMap = (collections) => {
   const transformedCollection = collections.docs.map((doc) => {
     const {

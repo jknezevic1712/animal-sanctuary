@@ -6,6 +6,7 @@ import userReducer from "./user/user.reducer";
 import petCollectionReducer from "./pet-collection/pet-collection.reducer";
 import registerNewReducer from "./register-new/register-new.reducer";
 import { searchFieldReducer } from "./search-bar/search-bar.reducer";
+import profileReducer from "./profile/profile.reducer";
 
 const persistConfig = {
   key: "root",
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   petCollection: petCollectionReducer,
   registerNew: registerNewReducer,
   searchBar: searchFieldReducer,
+  profile: profileReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
