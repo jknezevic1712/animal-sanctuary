@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
+import moment from "moment";
 
 import "./register-new.styles.scss";
 
@@ -19,7 +20,7 @@ const RegisterNew = ({ registerNewStartAsync }) => {
     url: "",
     petName: "",
     breed: "",
-    dateOfBirth: "",
+    defDateOfBirth: "",
     vaccinated: false,
   });
 
@@ -27,7 +28,7 @@ const RegisterNew = ({ registerNewStartAsync }) => {
     url,
     petName,
     breed,
-    dateOfBirth,
+    defDateOfBirth,
     vaccinated,
     ownerName,
     ownerAddress,
@@ -39,20 +40,30 @@ const RegisterNew = ({ registerNewStartAsync }) => {
     url: "",
     petName: "",
     breed: "",
-    dateOfBirth: "",
+    defDateOfBirth: "",
     vaccinated: false,
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const createdAt = new Date();
-    const registerNewPetData = { createdAt, ...petInformation };
+    const createdAt = moment().format("MM/DD/YYYY");
+    const dateOfBirth = moment(defDateOfBirth).format("MM/DD/YYYY");
+
+    const registerNewPetData = {
+      createdAt,
+      dateOfBirth,
+      url,
+      petName,
+      breed,
+      vaccinated,
+      ownerName,
+      ownerAddress,
+    };
 
     if (petName === "" && breed === "") {
       alert("Please enter required information!");
       return;
     }
-    console.log("PET: ", registerNewPetData);
 
     registerNewStartAsync(registerNewPetData);
     setPetInformation(initialState);
@@ -111,8 +122,8 @@ const RegisterNew = ({ registerNewStartAsync }) => {
             label="Pet's photo url"
           />
           <FormInputDate
-            name="dateOfBirth"
-            value={dateOfBirth}
+            name="defDateOfBirth"
+            value={defDateOfBirth}
             onChange={handleChange}
             label="Pet's date of birth"
           />

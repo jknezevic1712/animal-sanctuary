@@ -1,6 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
+import moment from "moment";
 
 const config = {
   apiKey: "AIzaSyAjQplpsqlztBuWqHC955nbABb0yXsJjSk",
@@ -23,7 +24,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
-    const createdAt = new Date();
+    const createdAt = moment().format("MM/DD/YYYY");
 
     try {
       await userRef.set({

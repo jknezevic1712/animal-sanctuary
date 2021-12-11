@@ -8,12 +8,6 @@ import { selectCollectionDetails } from "../../redux/pet-collection/pet-collecti
 import FormInput from "../form-input/form-input.component";
 import RegisterNewPicture from "../register-new-picture/register-new-picture.component";
 
-const toDateTime = (input) => {
-  var t = new Date(0);
-  t.setSeconds(input);
-  return t;
-};
-
 const PetInformationPage = () => {
   const { urlID } = useParams();
   const collectionDetails = useSelector(selectCollectionDetails(urlID));
@@ -29,12 +23,18 @@ const PetInformationPage = () => {
     vaccinated,
   } = collectionDetails;
 
-  const createdAtConverted = toDateTime(createdAt.seconds);
+  const vaccinatedInfo = () => {
+    if (vaccinated === true) {
+      return "Yes";
+    } else {
+      return "No";
+    }
+  };
 
   return (
     <div className="pet-information-page-container">
       <h3>{petName} Details</h3>
-      <span>Added on {`${createdAtConverted}`}</span>
+      <span>Added on {`${createdAt}`}</span>
       <div className="pet-information-page-innerContainer">
         <RegisterNewPicture url={url} />
         <form className="form-input-container">
@@ -85,7 +85,7 @@ const PetInformationPage = () => {
           <FormInput
             type="text"
             name="vaccinated"
-            value={vaccinated}
+            value={vaccinatedInfo()}
             label="Pet vaccinated?"
             readOnly
             shrinked="true"

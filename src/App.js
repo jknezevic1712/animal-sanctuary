@@ -23,6 +23,9 @@ const AuthenticationPage = lazy(() =>
 const PetCollectionContainer = lazy(() =>
   import("./pages/pet-collection/pet-collection.container")
 );
+const MyProfileContainer = lazy(() =>
+  import("./pages/my-profile/my-profile.container")
+);
 
 // * App component
 const App = () => {
@@ -56,6 +59,7 @@ const App = () => {
             path={`/pet-collection/:urlID`}
             component={PetInformationPage}
           />
+          <Route exact path="/my-profile" component={MyProfileContainer} />
         </Suspense>
       </Switch>
     </div>

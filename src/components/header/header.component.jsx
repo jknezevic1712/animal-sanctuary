@@ -25,7 +25,7 @@ const Header = ({ currentUser, signOutStart }) => (
     <div className="header-options">
       {currentUser ? (
         <>
-          <Link to="/profile">
+          <Link to="/my-profile">
             <img src={MyProfile} alt="My profile" className="header-option" />
           </Link>
           <Link to="/" onClick={signOutStart}>
