@@ -11,12 +11,20 @@ const PetCollectionTile = ({ collections, filteredPets }) => {
   return (
     <div className="collection-container">
       {filteredPets
-        ? filteredPets.map(({ id, ...otherPetsData }) => (
-            <CollectionItem key={id} {...otherPetsData} urlID={id} />
-          ))
-        : collections.map(({ id, ...otherCollectionsData }) => (
-            <CollectionItem key={id} {...otherCollectionsData} urlID={id} />
-          ))}
+        ? filteredPets
+            .sort((a, b) =>
+              a.petName.toUpperCase() > b.petName.toUpperCase() ? 1 : -1
+            )
+            .map(({ id, ...otherPetsData }) => (
+              <CollectionItem key={id} {...otherPetsData} urlID={id} />
+            ))
+        : collections
+            .sort((a, b) =>
+              a.petName.toUpperCase() > b.petName.toUpperCase() ? 1 : -1
+            )
+            .map(({ id, ...otherCollectionsData }) => (
+              <CollectionItem key={id} {...otherCollectionsData} urlID={id} />
+            ))}
     </div>
   );
 };

@@ -7,11 +7,7 @@
   padding-right: 1.5em;
 
   img {
-    border: 5px solid #5f9bfc;
-    border-top-left-radius: 25%;
-    border-bottom-right-radius: 25%;
-    border-top-right-radius: 2%;
-    border-bottom-left-radius: 2%;
+    border: 20px ridge #5f9bfc;
   }
 
   .homepage-tile-text {
@@ -31,10 +27,6 @@
   flex-direction: row-reverse;
 
   img {
-    border: 5px solid #5f9bfc;
-    border-top-left-radius: 2%;
-    border-bottom-right-radius: 2%;
-    border-top-right-radius: 25%;
-    border-bottom-left-radius: 25%;
+    border: 20px ridge #5f9bfc;
   }
 }

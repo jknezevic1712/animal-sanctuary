@@ -11,9 +11,9 @@ import FormInputDate from "../../components/form-input/form-input-date.component
 import RegisterNewPicture from "../../components/register-new-picture/register-new-picture.component";
 
 import { registerNewStartAsync } from "../../redux/register-new/register-new.actions";
-import { selectIsUploadingData } from "../../redux/register-new/register-new.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selectors";
 
-const RegisterNew = ({ registerNewStartAsync }) => {
+const RegisterNew = ({ registerNewStartAsync, currentUser }) => {
   const [petInformation, setPetInformation] = useState({
     ownerName: "",
     ownerAddress: "",
@@ -77,9 +77,24 @@ const RegisterNew = ({ registerNewStartAsync }) => {
     setPetInformation({ ...petInformation, [name]: value });
   };
 
+  const autofillData = () => {
+    const { address, displayName } = currentUser;
+
+    setPetInformation({
+      ...petInformation,
+      ownerName: displayName,
+      ownerAddress: address,
+    });
+  };
+
   return (
     <div className="registerNew">
       <h3>Let us keep your friend safe and happy!</h3>
+      <div className="registerNew-autofill">
+        <CustomButton type="button" onClick={autofillData}>
+          Autofill with my profile data
+        </CustomButton>
+      </div>
       <div className="registerNew-container">
         <RegisterNewPicture url={url} />
         <form className="form-input-container" onSubmit={handleSubmit}>
@@ -143,7 +158,7 @@ const RegisterNew = ({ registerNewStartAsync }) => {
 };
 
 const mapStateToProps = createStructuredSelector({
-  isUploadingData: selectIsUploadingData,
+  currentUser: selectCurrentUser,
 });
 
 const mapDispatchToProps = (dispatch) => ({

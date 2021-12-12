@@ -27,6 +27,10 @@ const MyProfileContainer = lazy(() =>
   import("./pages/my-profile/my-profile.container")
 );
 
+const VolunteeringPage = lazy(() =>
+  import("./pages/volunteering/volunteering.component")
+);
+
 // * App component
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
@@ -60,6 +64,7 @@ const App = () => {
             component={PetInformationPage}
           />
           <Route exact path="/my-profile" component={MyProfileContainer} />
+          <Route exact path="/volunteering" component={VolunteeringPage} />
         </Suspense>
       </Switch>
     </div>

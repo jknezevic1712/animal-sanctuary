@@ -8,6 +8,7 @@ import Logo from "./animal-sanctuary-logo.png";
 import SignIn from "./sign-in.png";
 import SignOut from "./sign-out.png";
 import MyProfile from "./my-profile.png";
+import Volunteering from "./volunteering.png";
 
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 import { signOutStart } from "../../redux/user/user.actions";
@@ -25,6 +26,13 @@ const Header = ({ currentUser, signOutStart }) => (
     <div className="header-options">
       {currentUser ? (
         <>
+          <Link to="/volunteering">
+            <img
+              src={Volunteering}
+              alt="Volunteering"
+              className="header-option"
+            />
+          </Link>
           <Link to="/my-profile">
             <img src={MyProfile} alt="My profile" className="header-option" />
           </Link>

@@ -1,0 +1,86 @@
+.volunteering-container {
+  min-height: 800px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    text-decoration: underline dotted 7px #5f9bfc;
+  }
+
+  .volunteering-innerContainer {
+    text-align: left;
+    padding: 0 2.5% 2.5% 2.5%;
+
+    .volunteering-section {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 1em;
+
+      .volunteering-image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 500px;
+          height: auto;
+          border: 20px ridge #5f9bfc;
+        }
+      }
+
+      .volunteering-text-first {
+        margin-bottom: 2em;
+        padding: 30px;
+
+        p {
+          font-family: "Concert One", cursive;
+          font-size: 0.7em;
+        }
+
+        h3 {
+          font-size: 2em;
+          text-align: center;
+        }
+      }
+
+      .volunteering-text {
+        margin: 0 0 2em 0;
+        padding: 30px;
+
+        ul {
+          align-items: flex-start;
+        }
+
+        p {
+          font-family: "Concert One", cursive;
+          font-size: 0.7em;
+        }
+
+        h3 {
+          font-size: 2em;
+          text-align: center;
+        }
+      }
+    }
+
+    .last-section {
+      margin: 0 0 2em 0;
+      padding: 0 30px 0 30px;
+      text-align: center;
+
+      p {
+        font-family: "Concert One", cursive;
+        font-size: 0.7em;
+        text-decoration: underline wavy 2px #5f9bfc;
+      }
+
+      h3 {
+        font-size: 2em;
+        text-align: center;
+      }
+    }
+  }
+}
