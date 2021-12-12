@@ -44,6 +44,13 @@
           font-size: 2em;
           text-align: center;
         }
+
+        &:hover {
+          & p {
+            transform: scale(1.05);
+            transition: transform 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+          }
+        }
       }
 
       .volunteering-text {
@@ -63,6 +70,14 @@
           font-size: 2em;
           text-align: center;
         }
+
+        &:hover {
+          & p,
+          ul {
+            transform: scale(1.05);
+            transition: transform 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+          }
+        }
       }
     }
 
@@ -80,6 +95,13 @@
       h3 {
         font-size: 2em;
         text-align: center;
+      }
+
+      &:hover {
+        & p {
+          transform: scale(1.05);
+          transition: transform 1.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+        }
       }
     }
   }

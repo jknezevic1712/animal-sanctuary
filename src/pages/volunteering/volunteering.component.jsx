@@ -88,13 +88,6 @@ const VolunteeringPage = () => {
             </p>
           </div>
         </div>
-        {/* <div className="volunteering-section"> */}
-        {/* <div className="volunteering-image">
-            <img
-              src="https://www.aspca.org/sites/default/files/how-you-can-help_volunteer_adoption-center_main-image.jpg"
-              alt="Volunteer with a puppy"
-            />
-          </div> */}
         <div className="volunteering-text last-section">
           <h3>Time consumption</h3>
           <p>
@@ -106,7 +99,6 @@ const VolunteeringPage = () => {
             more or less of your available time!
           </p>
         </div>
-        {/* </div> */}
       </div>
     </div>
   );
