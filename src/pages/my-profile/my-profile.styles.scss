@@ -6,9 +6,22 @@
   flex-direction: column;
   align-items: center;
 
-  h3 {
-    margin-top: 1.5em;
-    font-size: 1.75em;
+  .profile-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+
+    img {
+      margin-left: 1rem;
+      width: fit-content;
+      padding: 10px;
+    }
+
+    h3 {
+      margin-right: 7%;
+      font-size: 1.75em;
+    }
   }
 
   .profile-page-innerContainer {

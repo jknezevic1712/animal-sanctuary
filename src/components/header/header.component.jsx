@@ -20,7 +20,11 @@ const Header = ({ currentUser, signOutStart }) => (
         <img src={Logo} alt="Animal Sanctuary Logo" className="header-logo" />
       </Link>
     </div>
-    <div className={`header-title ${currentUser ? "header-title-margin" : ""}`}>
+    <div
+      className={`header-title ${
+        currentUser ? "header-title-bm" : "header-title-sm"
+      }`}
+    >
       <span>Animal Sanctuary</span>
     </div>
     <div className="header-options">
@@ -41,9 +45,18 @@ const Header = ({ currentUser, signOutStart }) => (
           </Link>
         </>
       ) : (
-        <Link to="/authentication">
-          <img src={SignIn} alt="Sign in" className="header-option" />
-        </Link>
+        <>
+          <Link to="/volunteering">
+            <img
+              src={Volunteering}
+              alt="Volunteering"
+              className="header-option"
+            />
+          </Link>
+          <Link to="/authentication">
+            <img src={SignIn} alt="Sign in" className="header-option" />
+          </Link>
+        </>
       )}
     </div>
   </div>

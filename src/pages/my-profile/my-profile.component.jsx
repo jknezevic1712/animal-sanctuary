@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 
 import "./my-profile.styles.scss";
+import VolunteerBadgePositive from "../../assets/volunteer-badge-positive.png";
+import VolunteerBadgeNegative from "../../assets/volunteer-badge-negative.png";
 
 import FormInput from "../../components/form-input/form-input.component";
 import CustomButton from "../../components/custom-button/custom-button.component";
@@ -15,6 +17,10 @@ const MyProfilePage = ({
   profileUpdateStartAsync,
   checkUserSession,
 }) => {
+  useEffect(() => {
+    checkUserSession();
+  }, []);
+
   const userAddress = () => {
     if (currentUser.address === undefined) {
       return "Not yet added";
@@ -38,10 +44,18 @@ const MyProfilePage = ({
     userProfileUrl: userProfileImage(),
     id: currentUser.id,
     address: userAddress(),
+    volunteer: currentUser.volunteer,
   });
 
-  const { email, displayName, id, createdAt, address, userProfileUrl } =
-    profileData;
+  const {
+    email,
+    displayName,
+    id,
+    createdAt,
+    address,
+    userProfileUrl,
+    volunteer,
+  } = profileData;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,6 +67,7 @@ const MyProfilePage = ({
       createdAt,
       userProfileUrl,
       address,
+      volunteer,
     };
 
     if (email === "" && displayName === "") {
@@ -61,6 +76,7 @@ const MyProfilePage = ({
     }
 
     profileUpdateStartAsync(id, profileUpdateData);
+    alert("Profile updated succesfully!");
     checkUserSession();
   };
 
@@ -72,7 +88,15 @@ const MyProfilePage = ({
 
   return (
     <div className="profile-page-container">
-      <h3>Profile Details</h3>
+      <div className="profile-header">
+        {currentUser.volunteer ? (
+          <img src={VolunteerBadgePositive} alt="Not yet a volunteer badge" />
+        ) : (
+          <img src={VolunteerBadgeNegative} alt="Volunteer badge" />
+        )}
+
+        <h3>Profile Details</h3>
+      </div>
       <span>Created on {`${createdAt}`}</span>
       <div className="profile-page-innerContainer">
         <RegisterNewPicture url={userProfileUrl} />

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
+import "./sign-in.styles.scss";
+
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 
@@ -8,8 +10,6 @@ import {
   googleSignInStart,
   emailSignInStart,
 } from "../../redux/user/user.actions";
-
-import "./sign-in.styles.scss";
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
   const [userCredentials, setUserCredentials] = useState({
@@ -19,8 +19,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
   const { email, password } = userCredentials;
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
     const { email, password } = userCredentials;
 

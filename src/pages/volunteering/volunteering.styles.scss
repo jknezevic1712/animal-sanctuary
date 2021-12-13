@@ -104,5 +104,22 @@
         }
       }
     }
+
+    .volunteering-application {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .volunteering-application-form {
+        display: none;
+        margin-top: 1em;
+        width: 25%;
+      }
+
+      .showApplication {
+        display: block;
+      }
+    }
   }
 }

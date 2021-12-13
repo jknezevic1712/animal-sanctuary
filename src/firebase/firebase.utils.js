@@ -25,12 +25,14 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = moment().format("MM/DD/YYYY");
+    const volunteer = false;
 
     try {
       await userRef.set({
         displayName,
         email,
         createdAt,
+        volunteer,
         ...additionalData,
       });
     } catch (error) {
@@ -47,6 +49,16 @@ export const registerNewPet = async (registerNewData) => {
   const batch = firestore.batch();
 
   batch.set(newDocRef, registerNewData);
+
+  return await batch.commit();
+};
+
+export const newVolunteerApplication = async (applicationData) => {
+  const collectionRef = firestore.collection("volunteers");
+  const newDocRef = collectionRef.doc();
+  const batch = firestore.batch();
+
+  batch.set(newDocRef, applicationData);
 
   return await batch.commit();
 };

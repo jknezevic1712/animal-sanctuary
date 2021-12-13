@@ -15,8 +15,9 @@ const SignUp = ({ signUpStart }) => {
     email: "",
     password: "",
     confirmPassword: "",
+    volunteer: false,
   });
-  const { displayName, address, email, password, confirmPassword } =
+  const { displayName, address, email, password, confirmPassword, volunteer } =
     userCredentials;
 
   const handleSubmit = async (e) => {
@@ -27,7 +28,7 @@ const SignUp = ({ signUpStart }) => {
       return;
     }
 
-    signUpStart({ displayName, address, email, password });
+    signUpStart({ displayName, address, email, password, volunteer });
   };
 
   const handleChange = (e) => {
