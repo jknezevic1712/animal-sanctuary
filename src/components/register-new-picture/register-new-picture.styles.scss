@@ -13,3 +13,43 @@
     border-bottom-left-radius: 25%;
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .registerNew-picture {
+    width: 250px;
+
+    img {
+      max-width: 250px;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .registerNew-picture {
+    width: 200px;
+
+    img {
+      max-width: 300px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .registerNew-picture {
+    width: 200px;
+
+    img {
+      max-width: 300px;
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .registerNew-picture {
+    width: 510px;
+
+    img {
+      max-width: 500px;
+    }
+  }
+}

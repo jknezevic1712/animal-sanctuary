@@ -7,3 +7,25 @@
   align-items: center;
   gap: 0 2em;
 }
+
+@media only screen and (max-width: 425px) {
+  .collection-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    gap: 0 2em;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .collection-container {
+    gap: 0 3em;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .collection-container {
+    gap: 0 4em;
+  }
+}

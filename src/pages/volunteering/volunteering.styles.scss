@@ -123,3 +123,108 @@
     }
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      font-size: 1.2em;
+
+      .volunteering-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        grid-gap: 0;
+
+        .volunteering-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 250px;
+            height: auto;
+            border: 20px ridge #5f9bfc;
+          }
+        }
+
+        .volunteering-text-first {
+          &:hover {
+            & p {
+              transform: none;
+              transition: none;
+            }
+          }
+        }
+
+        .volunteering-text {
+          &:hover {
+            & p,
+            ul {
+              transform: none;
+              transition: none;
+            }
+          }
+        }
+      }
+
+      .volunteering-section:first-child {
+        margin-top: 2em;
+      }
+
+      .last-section {
+        &:hover {
+          & p {
+            transform: none;
+            transition: none;
+          }
+        }
+      }
+
+      .volunteering-application {
+        .volunteering-application-form {
+          display: none;
+          margin-top: 1em;
+          width: 50%;
+        }
+
+        .showApplication {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      font-size: 0.8em;
+
+      .volunteering-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      .volunteering-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      font-size: 0.8em;
+    }
+  }
+}

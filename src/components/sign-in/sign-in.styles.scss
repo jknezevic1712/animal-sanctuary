@@ -19,6 +19,26 @@
   }
 }
 
+@media only screen and (max-width: 425px) {
+  .sign-in {
+    font-size: 1.2em;
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      margin-top: 10%;
+
+      .custom-button {
+        margin: 0;
+      }
+      .google-sign-in {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 2560px) {
   .sign-in {
     width: 420px;

@@ -116,12 +116,55 @@ $groups: 7;
   @media only screen and (min-width: 2560px) {
     .group {
       .form-input {
-        font-size: 1.2em;
+        font-size: 0.65em;
       }
 
       .form-input-label {
+        top: 5px;
         font-size: 0.85em;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .form-input-container {
+    align-items: center;
+
+    button {
+      margin-left: 0;
+      margin-bottom: 1em;
+    }
+
+    .checkboxstyle {
+      display: flex;
+      align-items: center;
+      width: 30px;
+      margin-left: 7em;
+
+      .form-input-label {
+        color: $main-color;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        pointer-events: none;
+        left: -6em;
+        top: -5px;
+      }
+
+      .form-input {
+        margin-left: 0;
+      }
+
+      .form-input:focus ~ .form-input-label {
+        @include removeShrinkLabel();
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .form-input-container {
+    width: 300px;
   }
 }

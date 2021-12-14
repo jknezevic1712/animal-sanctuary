@@ -18,3 +18,27 @@
     grid-gap: 20vw;
   }
 }
+
+@media only screen and (max-width: 425px) {
+  .pet-information-page-container {
+    span {
+      margin-bottom: 1.5em;
+    }
+
+    .pet-information-page-innerContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-items: center;
+      grid-gap: 10vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .pet-information-page-container {
+    .pet-information-page-innerContainer {
+      grid-gap: 35vw;
+    }
+  }
+}

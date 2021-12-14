@@ -3,6 +3,11 @@
   flex-direction: column;
   width: 380px;
 }
+@media only screen and (max-width: 425px) {
+  .sign-up {
+    font-size: 1.4em;
+  }
+}
 
 @media only screen and (min-width: 2560px) {
   .sign-up {
