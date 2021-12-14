@@ -2,6 +2,11 @@ import ProfileActionTypes from "./profile.types";
 
 import { updateProfileData } from "../../firebase/firebase.utils";
 
+import {
+  successNotification,
+  errorNotification,
+} from "../../components/alertify-popup/alertify-popup.component";
+
 export const profileUpdateStart = () => ({
   type: ProfileActionTypes.PROFILE_UPDATE_START,
 });
@@ -13,8 +18,12 @@ export const profileUpdateStartAsync = (userId, profileData) => {
     updateProfileData(userId, profileData)
       .then(() => {
         dispatch(profileUpdateSuccess(userId, profileData));
+        successNotification("Profile updated!");
       })
-      .catch((error) => dispatch(profileUpdateFailure(error.message)));
+      .catch((error) => {
+        dispatch(profileUpdateFailure(error.message));
+        errorNotification("Profile not updated!");
+      });
   };
 };
 

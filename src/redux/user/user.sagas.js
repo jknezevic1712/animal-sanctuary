@@ -18,6 +18,11 @@ import {
   getCurrentUser,
 } from "../../firebase/firebase.utils";
 
+import {
+  successNotification,
+  errorNotification,
+} from "../../components/alertify-popup/alertify-popup.component";
+
 export function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
     const userRef = yield call(
@@ -37,9 +42,10 @@ export function* signInWithGoogle() {
     const { user } = yield auth.signInWithPopup(googleProvider);
 
     yield getSnapshotFromUserAuth(user);
+    yield successNotification("Login successful!");
   } catch (error) {
     yield put(signInFailure(error));
-    yield alert("Error while using Google sign in method!");
+    yield errorNotification("Error while using Google sign in method!");
   }
 }
 
@@ -47,9 +53,10 @@ export function* signInWithEmail({ payload: { email, password } }) {
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password);
     yield getSnapshotFromUserAuth(user);
+    yield successNotification("Login successful!");
   } catch (error) {
     yield put(signInFailure(error));
-    yield alert("Please check your credentials!");
+    yield errorNotification("Please check your credentials!");
   }
 }
 
@@ -67,8 +74,10 @@ export function* signOut() {
   try {
     yield auth.signOut();
     yield put(signOutSuccess());
+    yield successNotification("Signed out successfully!");
   } catch (error) {
     yield put(signOutFailure(error));
+    yield errorNotification("Error while signing out!");
   }
 }
 
@@ -83,8 +92,10 @@ export function* signUp({
         additionalData: { displayName, address, volunteer },
       })
     );
+    yield successNotification("Sign up successful!");
   } catch (error) {
     yield put(signUpFailure(error));
+    yield errorNotification("Sign up unsuccessful!");
   }
 }
 

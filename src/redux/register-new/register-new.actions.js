@@ -2,6 +2,11 @@ import RegisterNewActionTypes from "./register-new.types";
 
 import { registerNewPet } from "../../firebase/firebase.utils";
 
+import {
+  successNotification,
+  errorNotification,
+} from "../../components/alertify-popup/alertify-popup.component";
+
 export const registerNewStart = () => ({
   type: RegisterNewActionTypes.REGISTER_NEW_START,
 });
@@ -13,8 +18,12 @@ export const registerNewStartAsync = (registerNewData) => {
     registerNewPet(registerNewData)
       .then(() => {
         dispatch(registerNewSuccess(registerNewData));
+        successNotification("Register successful!");
       })
-      .catch((error) => dispatch(registerNewFailure(error.message)));
+      .catch((error) => {
+        dispatch(registerNewFailure(error.message));
+        errorNotification("Register unsuccessful!");
+      });
   };
 };
 

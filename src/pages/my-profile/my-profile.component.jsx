@@ -70,13 +70,7 @@ const MyProfilePage = ({
       volunteer,
     };
 
-    if (email === "" && displayName === "") {
-      alert("Please enter required information!");
-      return;
-    }
-
     profileUpdateStartAsync(id, profileUpdateData);
-    alert("Profile updated succesfully!");
     checkUserSession();
   };
 
@@ -107,6 +101,7 @@ const MyProfilePage = ({
             value={displayName}
             onChange={handleChange}
             label="User name"
+            required
           />
           <FormInput
             type="text"
@@ -114,6 +109,7 @@ const MyProfilePage = ({
             value={email}
             label="E-mail"
             onChange={handleChange}
+            required
           />
           <FormInput
             type="text"
@@ -121,6 +117,7 @@ const MyProfilePage = ({
             value={address}
             onChange={handleChange}
             label="User address"
+            required
           />
           <FormInput
             type="text"

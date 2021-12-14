@@ -8,6 +8,8 @@ import CustomButton from "../custom-button/custom-button.component";
 
 import { signUpStart } from "../../redux/user/user.actions";
 
+import { errorNotification } from "../../components/alertify-popup/alertify-popup.component";
+
 const SignUp = ({ signUpStart }) => {
   const [userCredentials, setUserCredentials] = useState({
     displayName: "",
@@ -24,7 +26,7 @@ const SignUp = ({ signUpStart }) => {
     e.preventDefault();
 
     if (password !== confirmPassword) {
-      alert("Passwords don't match");
+      errorNotification("Passwords don't match!");
       return;
     }
 

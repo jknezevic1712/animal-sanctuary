@@ -2,6 +2,11 @@ import NewApplicationActionTypes from "./volunteering.types";
 
 import { newVolunteerApplication } from "../../firebase/firebase.utils";
 
+import {
+  successNotification,
+  errorNotification,
+} from "../../components/alertify-popup/alertify-popup.component";
+
 export const newApplicationStart = () => ({
   type: NewApplicationActionTypes.NEW_APPLICATION_START,
 });
@@ -13,8 +18,12 @@ export const newApplicationStartAsync = (applicationData) => {
     newVolunteerApplication(applicationData)
       .then(() => {
         dispatch(newApplicationSuccess());
+        successNotification("Successfully Applied!");
       })
-      .catch((error) => dispatch(newApplicationFailure(error.message)));
+      .catch((error) => {
+        dispatch(newApplicationFailure(error.message));
+        errorNotification("Error with your application!");
+      });
   };
 };
 

@@ -12,6 +12,8 @@ import { profileUpdateStartAsync } from "../../redux/profile/profile.actions";
 import { checkUserSession } from "../../redux/user/user.actions";
 import { newApplicationStartAsync } from "../../redux/volunteering/volunteering.actions";
 
+import { errorNotification } from "../../components/alertify-popup/alertify-popup.component";
+
 const VolunteeringPage = ({
   currentUser,
   profileUpdateStartAsync,
@@ -56,7 +58,7 @@ const VolunteeringPage = ({
       };
 
       if (currentUser.volunteer === true) {
-        alert("Already applied!");
+        errorNotification("Already applied!");
       } else {
         const { id } = currentUser;
         const profileUpdateData = { ...profileData, volunteer: true };
@@ -68,7 +70,6 @@ const VolunteeringPage = ({
 
         profileUpdateStartAsync(id, profileUpdateData);
         newApplicationStartAsync(volunteeringApplicationData);
-        alert("Succesfully applied!");
         checkUserSession();
       }
     } else {
@@ -90,11 +91,6 @@ const VolunteeringPage = ({
       displayName,
       email,
     };
-
-    if (address === "" && displayName === "" && email === "") {
-      alert("Please enter required information!");
-      return;
-    }
 
     newApplicationStartAsync(volunteeringApplicationData);
     setApplicationData(initialState);

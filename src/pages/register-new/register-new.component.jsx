@@ -60,11 +60,6 @@ const RegisterNew = ({ registerNewStartAsync, currentUser }) => {
       ownerAddress,
     };
 
-    if (petName === "" && breed === "") {
-      alert("Please enter required information!");
-      return;
-    }
-
     registerNewStartAsync(registerNewPetData);
     setPetInformation(initialState);
   };
@@ -108,6 +103,7 @@ const RegisterNew = ({ registerNewStartAsync, currentUser }) => {
             value={ownerName}
             onChange={handleChange}
             label="Owner name"
+            required
           />
           <FormInput
             type="text"
@@ -115,6 +111,7 @@ const RegisterNew = ({ registerNewStartAsync, currentUser }) => {
             value={ownerAddress}
             onChange={handleChange}
             label="Address"
+            required
           />
           <hr />
           <FormInput
