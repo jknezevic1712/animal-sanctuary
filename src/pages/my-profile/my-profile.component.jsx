@@ -19,7 +19,7 @@ const MyProfilePage = ({
 }) => {
   useEffect(() => {
     checkUserSession();
-  }, []);
+  }, [checkUserSession]);
 
   const userAddress = () => {
     if (currentUser.address === undefined) {

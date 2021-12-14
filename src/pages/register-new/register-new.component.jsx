@@ -90,7 +90,11 @@ const RegisterNew = ({ registerNewStartAsync, currentUser }) => {
   return (
     <div className="registerNew">
       <h3>Let us keep your friend safe and happy!</h3>
-      <div className="registerNew-autofill">
+      <div
+        className={`registerNew-autofill ${
+          currentUser ? "" : "registerNew-autofillHide"
+        }`}
+      >
         <CustomButton type="button" onClick={autofillData}>
           Autofill with my profile data
         </CustomButton>

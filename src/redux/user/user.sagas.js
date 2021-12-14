@@ -39,6 +39,7 @@ export function* signInWithGoogle() {
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
+    yield alert("Error while using Google sign in method!");
   }
 }
 
@@ -48,6 +49,7 @@ export function* signInWithEmail({ payload: { email, password } }) {
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
     yield put(signInFailure(error));
+    yield alert("Please check your credentials!");
   }
 }
 
