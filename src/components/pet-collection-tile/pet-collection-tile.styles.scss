@@ -18,13 +18,13 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .collection-container {
-    gap: 0 3em;
+    gap: 0 1em;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1919px) {
   .collection-container {
     gap: 0 4em;
   }

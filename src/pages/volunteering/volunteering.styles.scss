@@ -184,7 +184,7 @@
         .volunteering-application-form {
           display: none;
           margin-top: 1em;
-          width: 50%;
+          width: 300px;
         }
 
         .showApplication {
@@ -195,7 +195,21 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (width: 768px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      .volunteering-application {
+        .volunteering-application-form {
+          .form-input-align {
+            align-items: flex-end;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
   .volunteering-container {
     .volunteering-innerContainer {
       font-size: 0.8em;
@@ -209,13 +223,49 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (width: 1024px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      .volunteering-application {
+        .volunteering-application-form {
+          display: none;
+          margin-top: 1em;
+          width: 300px;
+        }
+
+        .showApplication {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .volunteering-container {
     .volunteering-innerContainer {
       .volunteering-section {
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  .volunteering-container {
+    .volunteering-innerContainer {
+      .volunteering-application {
+        .volunteering-application-form {
+          display: none;
+          margin-top: 1em;
+          width: 400px;
+        }
+
+        .showApplication {
+          display: block;
+        }
       }
     }
   }
@@ -225,6 +275,43 @@
   .volunteering-container {
     .volunteering-innerContainer {
       font-size: 0.8em;
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .volunteering-container {
+    h1 {
+      font-size: 3em;
+    }
+
+    .volunteering-innerContainer {
+      font-size: 1.2em;
+
+      .volunteering-section {
+        .volunteering-image {
+          img {
+            width: 750px;
+            height: auto;
+          }
+        }
+      }
+
+      .volunteering-section:first-child {
+        margin-top: 2em;
+      }
+
+      .volunteering-application {
+        .volunteering-application-form {
+          display: none;
+          margin-top: 1em;
+          width: 400px;
+        }
+
+        .showApplication {
+          display: block;
+        }
+      }
     }
   }
 }

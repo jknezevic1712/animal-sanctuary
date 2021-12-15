@@ -31,7 +31,7 @@
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (min-width: 320px) and (max-width: 375px) {
   .homepage-tile {
     display: grid;
     grid-template-columns: 1fr;
@@ -41,14 +41,103 @@
       width: 250px;
       height: 200px;
     }
+
+    .homepage-tile-text {
+      padding: 1em;
+      font-size: 1.2em;
+      text-shadow: 1px 1px lightgrey;
+
+      &:hover {
+        transform: none;
+        transition: none;
+      }
+    }
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 425px) and (max-width: 768px) {
   .homepage-tile {
     display: grid;
     grid-template-columns: 1fr;
     justify-items: center;
+
+    img {
+      width: 250px;
+      height: 200px;
+    }
+
+    .homepage-tile-text {
+      padding: 1em;
+      font-size: 1.2em;
+      text-shadow: 1px 1px lightgrey;
+
+      &:hover {
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .homepage-tile {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+
+    img {
+      width: 400px;
+      height: 300px;
+    }
+
+    .homepage-tile-text {
+      padding: 1em;
+      font-size: 1.2em;
+      text-shadow: 1px 1px lightgrey;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .homepage-tile {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .homepage-tile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+
+    img {
+      border: 20px ridge #5f9bfc;
+    }
+
+    .homepage-tile-text {
+      padding: 3em;
+      font-size: 1.2em;
+      text-shadow: 1px 1px lightgrey;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 1s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
+    }
+  }
+
+  .isTileRight {
+    display: flex;
+    flex-direction: row-reverse;
+
+    img {
+      border: 20px ridge #5f9bfc;
+    }
   }
 }
 

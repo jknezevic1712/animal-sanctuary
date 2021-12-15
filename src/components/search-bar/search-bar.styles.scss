@@ -23,9 +23,20 @@
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 320px) {
   .search-bar-container {
-    margin-right: 2.5em;
+    margin-right: 1.5em;
+
+    input {
+      width: 50%;
+      height: 40px;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .search-bar-container {
+    margin-right: 2em;
 
     input {
       width: 50%;
@@ -49,6 +60,36 @@
 
     input {
       width: 25%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .search-bar-container {
+    margin-right: 4.5em;
+
+    input {
+      width: 17%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .search-bar-container {
+    margin-right: 2.5em;
+
+    input {
+      width: 15%;
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .search-bar-container {
+    margin-right: 3.5em;
+
+    input {
+      width: 12%;
     }
   }
 }

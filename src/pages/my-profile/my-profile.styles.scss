@@ -32,7 +32,28 @@
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 320px) {
+  .profile-page-container {
+    span {
+      margin-bottom: 1.5em;
+    }
+
+    .profile-header {
+      h3 {
+        margin-right: 17%;
+      }
+    }
+    .profile-page-innerContainer {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 0;
+      grid-gap: 10vw;
+      justify-items: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
   .profile-page-container {
     span {
       margin-bottom: 1.5em;
@@ -60,25 +81,64 @@
       }
     }
     .profile-page-innerContainer {
-      grid-gap: 35vw;
+      grid-gap: 20vw;
     }
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
   .profile-page-container {
+    .profile-header {
+      h3 {
+        margin-right: 12%;
+      }
+    }
+
     .profile-page-innerContainer {
-      grid-gap: 35vw;
+      grid-gap: 10vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .profile-page-container {
+    .profile-header {
+      h3 {
+        margin-right: 9%;
+      }
+    }
+
+    .profile-page-innerContainer {
+      grid-gap: 20vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .profile-page-container {
+    .profile-header {
+      h3 {
+        margin-right: 7%;
+      }
     }
   }
 }
 
 @media only screen and (min-width: 2560px) {
   .profile-page-container {
+    span {
+      font-size: 1.4em;
+    }
+
     .profile-header {
       h3 {
         margin-right: 5%;
+        font-size: 2.4em;
       }
+    }
+
+    .profile-page-innerContainer {
+      grid-gap: 25vw;
     }
   }
 }

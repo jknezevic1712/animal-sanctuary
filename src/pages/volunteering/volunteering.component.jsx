@@ -207,7 +207,10 @@ const VolunteeringPage = ({
               displayApplication ? "showApplication" : ""
             }`}
           >
-            <form className="form-input-container" onSubmit={handleSubmit}>
+            <form
+              className="form-input-container form-input-align"
+              onSubmit={handleSubmit}
+            >
               <FormInput
                 type="text"
                 name="displayName"

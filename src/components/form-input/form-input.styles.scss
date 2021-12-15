@@ -127,7 +127,44 @@ $groups: 7;
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 320px) {
+  .form-input-container {
+    align-items: center;
+    width: 300px;
+
+    button {
+      margin-left: 0;
+      margin-bottom: 1em;
+    }
+
+    .checkboxstyle {
+      display: flex;
+      align-items: center;
+      width: 30px;
+      margin-left: 7em;
+
+      .form-input-label {
+        color: $main-color;
+        font-size: 30px;
+        font-weight: bold;
+        position: absolute;
+        pointer-events: none;
+        left: -6em;
+        top: -5px;
+      }
+
+      .form-input {
+        margin-left: 0;
+      }
+
+      .form-input:focus ~ .form-input-label {
+        @include removeShrinkLabel();
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 425px) {
   .form-input-container {
     align-items: center;
 
@@ -163,8 +200,28 @@ $groups: 7;
   }
 }
 
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 768px) and (max-width: 1920px) {
   .form-input-container {
-    width: 300px;
+    button {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+@media only screen and (width: 1024px) {
+  .form-input-container {
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  .form-input-container {
+    width: 400px;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .form-input-container {
+    width: 400px;
   }
 }

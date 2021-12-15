@@ -35,10 +35,72 @@
   }
 }
 
+@media only screen and (min-width: 320px) and (max-width: 425px) {
+  .pet-information-page-container {
+    h3 {
+      font-size: 2.3em;
+      margin-top: 0.5em;
+    }
+
+    span {
+      font-size: 1.3em;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .pet-information-page-container {
+    h3 {
+      margin-top: 0.5em;
+    }
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   .pet-information-page-container {
+    h3 {
+      margin-top: 0.5em;
+    }
+
     .pet-information-page-innerContainer {
-      grid-gap: 35vw;
+      grid-gap: 25vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .pet-information-page-container {
+    h3 {
+      margin-top: 0.5em;
+    }
+
+    .pet-information-page-innerContainer {
+      grid-gap: 25vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) {
+  .pet-information-page-container {
+    .pet-information-page-innerContainer {
+      grid-gap: 25vw;
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .pet-information-page-container {
+    h3 {
+      font-size: 3em;
+      margin-top: 0.5em;
+    }
+
+    span {
+      font-size: 1.5em;
+    }
+
+    .pet-information-page-innerContainer {
+      grid-gap: 25vw;
     }
   }
 }

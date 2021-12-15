@@ -123,6 +123,20 @@
   }
 }
 
+@media only screen and (min-width: 1920px) {
+  .collection-item-container {
+    max-width: none;
+    min-width: unset;
+    width: 25%;
+
+    .collection-item-content {
+      height: fit-content;
+      width: 200px;
+      font-size: 1.2em;
+    }
+  }
+}
+
 @media only screen and (min-width: 2560px) {
   .collection-item-container {
     .collection-item-content {

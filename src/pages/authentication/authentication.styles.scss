@@ -5,6 +5,14 @@
   justify-items: center;
 }
 
+@media only screen and (max-width: 767px) {
+  .authentication-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 5rem;
+  }
+}
+
 @media only screen and (min-width: 768px) {
   .authentication-container {
     display: grid;
@@ -21,19 +29,12 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .authentication-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-row-gap: 5rem;
-  }
-}
-
 @media only screen and (min-width: 2560px) {
   .authentication-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 15rem;
-    margin-right: 39%;
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+    margin-right: 0;
   }
 }
