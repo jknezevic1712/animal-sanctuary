@@ -67,8 +67,71 @@
   }
 }
 
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .sign-in {
+    font-size: 1.2em;
+
+    h2 {
+      margin-right: 0;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      margin-top: 10%;
+
+      .custom-button {
+        margin: 0;
+      }
+      .google-sign-in {
+        margin-top: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  .sign-in {
+    font-size: 1.2em;
+
+    h2 {
+      margin-right: 0;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: flex-start;
+      margin-top: 10%;
+
+      .custom-button {
+        margin: unset;
+      }
+      .google-sign-in {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 2560px) {
   .sign-in {
     width: 420px;
+
+    .buttons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: flex-start;
+      margin-top: 10%;
+      width: 500px;
+
+      .custom-button {
+        margin: unset;
+      }
+      .google-sign-in {
+        margin-left: 0;
+      }
+    }
   }
 }

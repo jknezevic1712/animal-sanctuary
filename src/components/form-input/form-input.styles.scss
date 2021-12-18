@@ -28,7 +28,7 @@ $groups: 7;
   button {
     width: 50%;
     margin-top: 15%;
-    margin-left: 25%;
+    margin-left: 20%;
   }
 
   .group {
@@ -208,15 +208,31 @@ $groups: 7;
   }
 }
 
-@media only screen and (width: 1024px) {
+@media only screen and (min-width: 1024px) {
   .form-input-container {
     width: 280px;
+
+    button {
+      width: 210px;
+    }
   }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1920px) {
   .form-input-container {
-    width: 400px;
+    width: 500px;
+
+    hr {
+      width: 100%;
+    }
+
+    .group {
+      width: 400px;
+
+      .form-input {
+        width: 385px;
+      }
+    }
   }
 }
 

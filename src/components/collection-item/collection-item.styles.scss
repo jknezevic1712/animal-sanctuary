@@ -73,6 +73,14 @@
       color: #4a4a4a;
       font-size: 0.4em;
     }
+
+    .collection-item-subtitle:first-child {
+      margin-bottom: 1em;
+    }
+
+    .collection-item-subtitle:last-child {
+      margin-bottom: 1em;
+    }
   }
 }
 
@@ -109,7 +117,7 @@
 
     .collection-item-content {
       height: fit-content;
-      width: 200px;
+      width: 250px;
     }
   }
 }
@@ -142,6 +150,12 @@
     .collection-item-content {
       font-size: 1.5em;
       height: fit-content;
+      width: 400px;
+
+      .collection-item-subtitle:last-child {
+        width: 350px;
+        max-width: none;
+      }
     }
   }
 }

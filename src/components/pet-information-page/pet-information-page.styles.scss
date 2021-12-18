@@ -45,6 +45,24 @@
     span {
       font-size: 1.3em;
     }
+
+    .pet-information-page-innerContainer {
+      .form-input-container {
+        width: 280px;
+
+        hr {
+          width: 100%;
+        }
+
+        .group {
+          width: 280px;
+
+          .form-input {
+            width: 265px;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -52,6 +70,24 @@
   .pet-information-page-container {
     h3 {
       margin-top: 0.5em;
+    }
+
+    .pet-information-page-innerContainer {
+      .form-input-container {
+        width: 300px;
+
+        hr {
+          width: 100%;
+        }
+
+        .group {
+          width: 300px;
+
+          .form-input {
+            width: 285px;
+          }
+        }
+      }
     }
   }
 }
@@ -64,6 +100,22 @@
 
     .pet-information-page-innerContainer {
       grid-gap: 25vw;
+
+      .form-input-container {
+        width: 300px;
+
+        hr {
+          width: 100%;
+        }
+
+        .group {
+          width: 300px;
+
+          .form-input {
+            width: 285px;
+          }
+        }
+      }
     }
   }
 }
@@ -76,6 +128,22 @@
 
     .pet-information-page-innerContainer {
       grid-gap: 25vw;
+
+      .form-input-container {
+        width: 400px;
+
+        hr {
+          width: 100%;
+        }
+
+        .group {
+          width: 400px;
+
+          .form-input {
+            width: 385px;
+          }
+        }
+      }
     }
   }
 }
@@ -84,6 +152,22 @@
   .pet-information-page-container {
     .pet-information-page-innerContainer {
       grid-gap: 25vw;
+
+      .form-input-container {
+        width: 400px;
+
+        hr {
+          width: 100%;
+        }
+
+        .group {
+          width: 400px;
+
+          .form-input {
+            width: 385px;
+          }
+        }
+      }
     }
   }
 }
@@ -101,6 +185,22 @@
 
     .pet-information-page-innerContainer {
       grid-gap: 25vw;
+
+      .form-input-container {
+        width: 500px;
+
+        hr {
+          width: 100%;
+        }
+
+        .group {
+          width: 500px;
+
+          .form-input {
+            width: 485px;
+          }
+        }
+      }
     }
   }
 }

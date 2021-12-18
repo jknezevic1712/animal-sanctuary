@@ -2,6 +2,8 @@
   width: 500px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  font-size: 1.4em;
 
   img {
     max-width: 500px;
@@ -37,6 +39,7 @@
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .registerNew-picture {
     width: 200px;
+    justify-content: unset;
 
     img {
       max-width: 300px;

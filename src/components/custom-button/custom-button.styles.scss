@@ -46,3 +46,30 @@
     }
   }
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+  .custom-button {
+    &.google-sign-in {
+      width: unset;
+      margin-left: 1em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1920px) {
+  .custom-button {
+    &.google-sign-in {
+      width: unset;
+      margin-left: 1em;
+    }
+  }
+}
+
+@media only screen and (min-width: 1920px) and (max-width: 2560px) {
+  .custom-button {
+    &.google-sign-in {
+      width: unset;
+      margin-left: 1em;
+    }
+  }
+}

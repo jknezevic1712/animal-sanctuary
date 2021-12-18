@@ -96,7 +96,10 @@ const RegisterNew = ({ registerNewStartAsync, currentUser }) => {
       </div>
       <div className="registerNew-container">
         <RegisterNewPicture url={url} />
-        <form className="form-input-container" onSubmit={handleSubmit}>
+        <form
+          className="form-input-container registerNew-form"
+          onSubmit={handleSubmit}
+        >
           <FormInput
             type="text"
             name="ownerName"
