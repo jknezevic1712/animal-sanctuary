@@ -7,6 +7,8 @@ import "./pet-information-page.styles.scss";
 import { selectCollectionDetails } from "../../redux/pet-collection/pet-collection.selectors";
 import FormInput from "../form-input/form-input.component";
 import RegisterNewPicture from "../register-new-picture/register-new-picture.component";
+import CustomButton from "../custom-button/custom-button.component";
+import {infoNotification} from "../alertify-popup/alertify-popup.component";
 
 const PetInformationPage = () => {
   const { urlID } = useParams();
@@ -21,6 +23,7 @@ const PetInformationPage = () => {
     petName,
     url,
     vaccinated,
+    visitHours
   } = collectionDetails;
 
   const vaccinatedInfo = () => {
@@ -30,6 +33,11 @@ const PetInformationPage = () => {
       return "No";
     }
   };
+
+  const visitingHours = () => {
+
+    return infoNotification(visitHours);
+  }
 
   return (
     <div className="pet-information-page-container">
@@ -90,7 +98,7 @@ const PetInformationPage = () => {
             readOnly
             shrinked="true"
           />
-          {/* <CustomButton type="submit">SUBMIT</CustomButton> */}
+          <CustomButton type="button" onClick={() => visitingHours()}>Visit hours</CustomButton>
         </form>
       </div>
     </div>

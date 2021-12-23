@@ -13,3 +13,8 @@ export const errorNotification = (message) => {
   alertify.set("notifier", "delay", 2);
   alertify.error(message, "error");
 };
+
+export const infoNotification = (message) => {
+  alertify.set("notifier", "position", "bottom-center");
+  alertify.notify(message, 'info', 0);
+};

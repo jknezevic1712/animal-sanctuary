@@ -2,8 +2,6 @@ import React from "react";
 
 import "./register-new-picture.styles.scss";
 
-import Spinner from "../spinner/spinner.component";
-
 const RegisterNewPicture = ({ url }) => {
   return (
     <div className="registerNew-picture">

@@ -84,6 +84,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
       url,
       vaccinated,
       createdAt,
+      visitHours
     } = doc.data();
 
     return {
@@ -96,6 +97,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
       url,
       vaccinated,
       createdAt,
+      visitHours
     };
   });
 
