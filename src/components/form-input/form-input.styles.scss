@@ -135,6 +135,7 @@ $groups: 7;
     button {
       margin-left: 0;
       margin-bottom: 1em;
+      font-size: 0.5em;
     }
 
     .checkboxstyle {
@@ -164,13 +165,14 @@ $groups: 7;
   }
 }
 
-@media only screen and (min-width: 375px) and (max-width: 425px) {
+@media only screen and (min-width: 375px) and (max-width: 768px) {
   .form-input-container {
     align-items: center;
 
     button {
       margin-left: 0;
       margin-bottom: 1em;
+      font-size: 0.8rem;
     }
 
     .checkboxstyle {
@@ -204,6 +206,7 @@ $groups: 7;
   .form-input-container {
     button {
       margin-bottom: 1em;
+      font-size: 0.3em;
     }
   }
 }
